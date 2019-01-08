@@ -13,4 +13,4 @@ cls: nudtpaper.dtx nudtpaper.ins
 	xelatex nudtpaper.dtx
 	xelatex nudtpaper.dtx
 clean:
-	rm -v *.aux *.log *.toc *.ind *.gls *.glo *.idx *.ilg *.out *.bbl *.thm *.blg *.lot *.lof *.pdf *.nls *.nlo
+	rm -vf *.aux *.log *.toc *.ind *.gls *.glo *.idx *.ilg *.out *.bbl *.thm *.blg *.lot *.lof *.pdf *.nls *.nlo
