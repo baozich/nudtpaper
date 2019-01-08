@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (C) 2018 by Liu Benyuan <liubenyuan@gmail.com>
+%% Copyright (C) 2019 by Liu Benyuan <liubenyuan@gmail.com>
 %% 
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3a
@@ -66,7 +66,6 @@
 \RequirePackage{tabularx}
 \RequirePackage{slashbox}
 \RequirePackage[neverdecrease]{paralist}
-\RequirePackage{enumitem}
 \RequirePackage{xcolor}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage[Symbolsmallscale]{upgreek}
@@ -122,14 +121,14 @@
     \setsansfont{Arial}
     \setmonofont{Courier New}
     %%%% Using Founder Family Fonts
-    \setCJKmainfont[BoldFont={FZYaSong-DB-GBK}]{FZShuSong_GB18030-Z01}
-    \setCJKsansfont{FZHei-B01} % Hei
-    \setCJKmonofont{FZFangSong-Z02} % fs
+    \setCJKmainfont[BoldFont={FZYaSongS-DB-GB}]{FZShuSong-Z01S}
+    \setCJKsansfont{FZHei-B01S} % Hei
+    \setCJKmonofont{FZFangSong-Z02S} % fs
     %%%% alias
-    \setCJKfamilyfont{song}{FZShuSong_GB18030-Z01}
-    \setCJKfamilyfont{hei}{FZHei-B01}
-    \setCJKfamilyfont{fs}{FZFangSong-Z02} % fang-song
-    \setCJKfamilyfont{kai}{FZKai-Z03} % Kai
+    \setCJKfamilyfont{song}{FZShuSong-Z01S}
+    \setCJKfamilyfont{hei}{FZHei-B01S}
+    \setCJKfamilyfont{fs}{FZFangSong-Z02S} % fang-song
+    \setCJKfamilyfont{kai}{FZKai-Z03S} % Kai
 }
 
 \newcommand{\installfandol}{
@@ -356,21 +355,26 @@
 }
 \setlength{\parskip}{0bp \@minus 1bp}
 \newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
-\newlength\biblabelwd
-\settowidth\biblabelwd{\widthof{[999]}} % Maximum Ref Num = 999
 \renewenvironment{thebibliography}[1]{%
-  \chapter*{\bibname}%
-  \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-  \begin{enumerate}[label={[\arabic{enumi}]},itemsep=0pt,parsep=0pt,labelindent=\CJK@twochars,labelwidth=\biblabelwd,leftmargin=0pt,itemindent=*,align=left]
-  \@openbib@code%
-  \sloppy\frenchspacing%
-  \clubpenalty4000%
-  \widowpenalty4000%
-  \interlinepenalty4000%
-  \sfcode`\.\@m}
-  {\def\@noitemerr
-    {\@latex@warning{Empty `thebibliography' environment}}%
-     \end{enumerate}\frenchspacing}
+   \chapter*{\bibname}%
+   \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\renewcommand{\makelabel}[1]{##1\hfill}
+         \settowidth\labelwidth{1.1cm}
+         \setlength{\labelsep}{0.4em}
+         \setlength{\itemindent}{0pt}
+         \setlength{\leftmargin}{\labelwidth+\labelsep}
+         \addtolength{\itemsep}{-0.7em}
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy\frenchspacing
+    \clubpenalty4000%
+    \widowpenalty4000%
+    \interlinepenalty4000%
+    \sfcode`\.\@m}
+   {\def\@noitemerr
+     {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist\frenchspacing}
 \setlength{\floatsep}{12bp}
 \setlength{\intextsep}{12bp}
 \setlength{\textfloatsep}{12bp}
@@ -582,14 +586,12 @@ Defense Technology}\fi}\\
 ~\@endate~
   }
   \end{center}\vfill
-  
-\renewcommand{\baselinestretch}{1.5}%
-
-\ifisanon{~}\else{
   \cleardoublepage%
   \newpage
   \thispagestyle{empty}
+
   {\cusong \erhao \centering \ziju{12pt} 独创性声明 \par\vspace{2cm}}
+    \renewcommand{\baselinestretch}{1.5}%
   {\fangsong\xiaosi %
 本人声明所呈交的学位论文是我本人在导师指导下进行的研究工
 作及取得的研究成果。尽我所知，除文中特别加以标注和致谢的地方外，论文中
@@ -617,7 +619,6 @@ Defense Technology}\fi}\\
   \hfill 日期：\hfill\hfill 年\hfill 月 \hfill 日\par
 作者指导教师签名：\hrulefill\hrulefill\hrulefill\hrulefill\hrulefill
   \hfill 日期：\hfill\hfill 年\hfill 月 \hfill 日\par}
-}\fi
 
   \normalsize % normal, 正文开始
   \def\@tabular{\wuhao[1.25]\old@tabular} % 之后表格字体使用5号
