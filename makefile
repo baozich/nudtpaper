@@ -1,6 +1,6 @@
 pdf: thesis.tex 
 	xelatex thesis
-	# makeindex -s nomencl.ist -o thesis.nls thesis.nlo
+	makeindex -s nomencl.ist -o thesis.nls thesis.nlo
 	bibtex thesis
 	bibtex thesis
 	xelatex thesis
