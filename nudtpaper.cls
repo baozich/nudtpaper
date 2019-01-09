@@ -121,7 +121,7 @@
     \setsansfont{Arial}
     \setmonofont{Courier New}
     %%%% Using Founder Family Fonts
-    \setCJKmainfont[BoldFont={FZYaSongS-DB-GB}]{FZShuSong-Z01S}
+    \setCJKmainfont[BoldFont={STZhongsong}]{FZShuSong-Z01S}
     \setCJKsansfont{FZHei-B01S} % Hei
     \setCJKmonofont{FZFangSong-Z02S} % fs
     %%%% alias
