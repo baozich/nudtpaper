@@ -81,8 +81,8 @@
 \newcolumntype{Z}{>{\centering\arraybackslash}X}
 
 % 0. 符号表
-\RequirePackage[intoc,norefeq,refpage]{nomencl}
-\renewcommand{\nomname}{重要符号表}
+\RequirePackage[intoc,norefeq,norefpage]{nomencl}
+\renewcommand{\nomname}{符号使用说明}
 \renewcommand{\nomgroup}[1]{}%
 % 1. 定制nom条目
 \def\pagedeclaration#1{\nobreakspace#1}%
@@ -91,7 +91,7 @@
  \def\@tempa{#2}\def\@tempb{#3}%
  \protected@write\@nomenclaturefile{}%
   {\string\nomenclatureentry{#1\nom@verb\@tempa @{\nom@verb\@tempa}&%
-      \begingroup\nom@verb\@tempb\endgroup &\begingroup#4\endgroup&%
+      \begingroup\nom@verb\@tempb\endgroup & %
       \begingroup\protect%
         |nompageref}{\thepage}}%
  \endgroup%
@@ -108,8 +108,7 @@
     \if@intoc\addcontentsline{toc}{chapter}{\nomname}\fi%
   }%
 \nompreamble%
-\begin{longtable}[c]{@{}lp{23em}ll@{}}%
-{\hei 符~号} & {\hei 定~义} & {\hei 单~位} & {\hei 页~码} \\
+\begin{longtable}[c]{@{}lp{24em}l@{}}%
 }
 \def\endthenomenclature{%
 \end{longtable}%
